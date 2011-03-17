@@ -6,11 +6,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem "nifty-generators"
-gem "spork"
 gem "capybara"
-gem "redgreen"
-gem "ZenTest"
 gem "faker"
 
 # Use unicorn as the web server
@@ -34,8 +30,16 @@ gem "faker"
 # and rake tasks are available in development mode:
 
 group :development, :test do
-  gem "webrat"
   gem "rspec-rails"
-  gem "factory_girl_rails"
-  
+  gem 'webrat'
+  gem 'factory_girl_rails'
+  gem "autotest"
+  gem "autotest-rails"
+  gem "autotest-growl"
+  gem "redgreen"
+  gem "ZenTest"
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'nifty-generators'
+  gem 'text'
+  gem "devise"
 end

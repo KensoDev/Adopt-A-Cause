@@ -5,7 +5,6 @@ describe HomeController do
   
   context "I am not logged in" do
     describe "GET 'index'" do
-      
       it "should be successfull" do
         get :index
         response.should be_success
@@ -15,6 +14,7 @@ describe HomeController do
         get :index
         response.should have_selector("title", :content => "Welcome to our site!")
       end
+      
       
     end
   end
