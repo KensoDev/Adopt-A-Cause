@@ -3,10 +3,12 @@ require 'spec_helper'
 describe Wish do
   before(:each) do
     @user = User.create!(:first_name => 'Avi', :last_name => 'Tzurel', :email => 'avi@kensodev.com', :password => 'foobar', :password_confirmation => 'foobar')
+    
+    @wish_attriutes = {:name => '', :body => ''}
   end
 
   it "should not be saved without a name" do
-    @wish = Wish.new(:body => "This is the body")
+    @wish = Wish.new(:body => 'This is my body', :user => @user)
     @wish.save.should be_false
   end
   
@@ -14,5 +16,4 @@ describe Wish do
     @wish = Wish.new(:name => 'This is my wish', :body => 'This is the wish body')
     @wish.save.should be_false
   end
-  
 end
